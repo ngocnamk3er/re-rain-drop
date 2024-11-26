@@ -47,6 +47,8 @@ The demo pictures are put under the directory `./demo/input/` and `./demo/output
 
 ```
 CUDA_VISIBLE_DEVICES=gpu_id python predict.py --mode demo --input_dir ./demo/input/ --output_dir ./demo/output/
+
+python predict.py --mode demo --input_dir ./demo/input/ --output_dir ./demo/output/
 ```
 
 
