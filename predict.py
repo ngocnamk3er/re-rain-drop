@@ -56,13 +56,13 @@ def predict(image):
 if __name__ == '__main__':
     args = get_args()
 
-    # model = Generator().cpu()
-    # model.load_state_dict(torch.load('./weights/model.pt', map_location=torch.device('cpu')))
-
-    checkpoint = torch.load('./weights/gen.pkl', map_location=torch.device('cpu'))
-    model_state_dict = checkpoint['model'] if 'model' in checkpoint else checkpoint  # Lấy trọng số mô hình từ checkpoint
     model = Generator().cpu()
-    model.load_state_dict(model_state_dict, strict=False)
+    model.load_state_dict(torch.load('./weights/gen.pkl', map_location=torch.device('cpu')))
+
+    # checkpoint = torch.load('./weights/model.pt', map_location=torch.device('cpu'))
+    # model_state_dict = checkpoint['model'] if 'model' in checkpoint else checkpoint  # Lấy trọng số mô hình từ checkpoint
+    # model = Generator().cpu()
+    # model.load_state_dict(model_state_dict, strict=False)
 
 
     if args.mode == 'demo':
